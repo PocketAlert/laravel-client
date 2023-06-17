@@ -21,7 +21,7 @@ class PocketAlertClient
             'headers' => [
                 'Authorization' => $token,
             ],
-            'form_params' => [
+            'json' => [
                 'title' => $title,
                 'message' => $message,
                 'device_id' => $device_id,
