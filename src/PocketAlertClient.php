@@ -7,19 +7,22 @@ use GuzzleHttp\Client;
 class PocketAlertClient
 {
     protected $client;
+    protected $token;
 
-    public function __construct()
+    public function __construct($token)
     {
         $this->client = new Client([
             'base_uri' => 'https://api.pocketalert.app/v1/',
         ]);
+
+        $this->token = $token;
     }
 
-    public function sendMessage($title, $message, $device_id, $application_id, $token)
+    public function sendMessage($title, $message, $device_id = null, $application_id = null)
     {
         $response = $this->client->post('messages', [
             'headers' => [
-                'Authorization' => $token,
+                'Authorization' => $this->token,
             ],
             'json' => [
                 'title' => $title,
