@@ -1,0 +1,30 @@
+{
+    "name": "pocketalert/laravel-client",
+    "description": "A Laravel package to send messages to PocketAlert API",
+    "type": "library",
+    "require": {
+        "php": ">=7.3.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/support": "^8.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PocketAlert\\PocketAlertClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Roman",
+            "email": "info@pocketalert.app"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PocketAlert\\PocketAlertClient\\PocketAlertClientServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
